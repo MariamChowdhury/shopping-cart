@@ -25,9 +25,9 @@
 
                      <div class="col-md-5 center-item">
                         <div class="input-group number-spinner">
-                           <button class="btn btn-default"><i class="fas fa-minus"></i></button>
-                           <input type="text" class="form-control text-center" value="1">
-                           <button class="btn btn-default"><i class="fas fa-plus"></i></button>
+                           <button id="first-minus" class="btn btn-default"><i class="fas fa-minus"></i></button>
+                           <input id="first-number" type="text" class="form-control text-center" value="1">
+                           <button id="first-plus"  class="btn btn-default"><i  class="fas fa-plus"></i></button>
                         </div>
                         <h5>$1219</h5>
                         <img src="images/remove.png" alt="" class="remove-item">
@@ -43,9 +43,9 @@
                      </div>
                      <div class="col-md-5 center-item">
                         <div class="input-group number-spinner">
-                           <button class="btn btn-default"><i class="fas fa-minus"></i></button>
-                           <input type="text" class="form-control text-center" value="1">
-                           <button class="btn btn-default"><i class="fas fa-plus"></i></button>
+                           <button id="second-minus" class="btn btn-default"><i class="fas fa-minus"></i></button>
+                           <input id="second-number" type="text" class="form-control text-center" value="1">
+                           <button id="second-plus" class="btn btn-default"><i class="fas fa-plus"></i></button>
 
                         </div>
                         <h5>$59</h5>
@@ -77,6 +77,37 @@
          </div>
       </div>
    </section>
+
+
+   <script>
+      // 
+      const firstNumber=document.getElementById('first-number');
+      const firstBtn=document.getElementById('first-plus');
+      firstBtn.addEventListener('click',increaseValue);
+      const firstMinus=document.getElementById('first-minus');
+      firstMinus.addEventListener('click',decreaseValue);
+      const secondNumber=document.getElementById("second-number");
+      const secondBtn=document.getElementById('second-plus');
+      secondBtn.addEventListener('click',increaseValue2);
+
+      const secondMinus=document.getElementById('second-minus');
+      secondMinus.addEventListener('click',decreaseValue2);
+
+
+
+      function increaseValue(){
+         firstNumber.value=parseInt(firstNumber.value)+1;
+      }
+      function decreaseValue(){
+         firstNumber.value=parseInt(firstNumber.value)-1;
+      }
+      function increaseValue2(){
+         secondNumber.value=parseInt(secondNumber.value)+1;
+      }
+      function decreaseValue2(){
+         secondNumber.value=parseInt(secondNumber.value)-1;
+      }
+   </script>
 </body>
 
 </html>
